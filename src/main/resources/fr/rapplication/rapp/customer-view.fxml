@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.rdtb.rfx.CustomerView">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="601.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-126.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="126.0">
+         <image>
+            <Image url="@../../../../../../../../imageFX.jpeg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutY="1.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #212121;" AnchorPane.bottomAnchor="274.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane layoutX="160.0" layoutY="28.0" prefHeight="307.0" prefWidth="281.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <Label layoutX="84.0" layoutY="7.0" text="Créer mon compte" />
+            <Label layoutX="14.0" layoutY="28.0" text="Raison sociale" AnchorPane.leftAnchor="14.0" />
+            <Label layoutX="14.0" layoutY="278.0" text="Email" AnchorPane.leftAnchor="14.0" />
+            <Label layoutX="66.0" layoutY="128.0" text="Adresse" AnchorPane.leftAnchor="66.0" />
+            <Label layoutX="14.0" layoutY="128.0" text="Numéro" AnchorPane.leftAnchor="14.0" />
+            <Label layoutX="14.0" layoutY="178.0" text="Complément d'adresse" AnchorPane.leftAnchor="14.0" />
+            <Label layoutX="14.0" layoutY="228.0" text="Code postal" AnchorPane.leftAnchor="14.0" />
+            <Label layoutX="148.0" layoutY="28.0" prefHeight="17.0" prefWidth="78.0" text="Numéro TVA" AnchorPane.leftAnchor="148.0" AnchorPane.rightAnchor="55.0" />
+            <Label layoutX="112.0" layoutY="228.0" text="Téléphone" />
+            <TextField layoutX="15.0" layoutY="45.0" prefHeight="26.0" prefWidth="127.0" AnchorPane.leftAnchor="15.0" />
+            <TextField layoutX="149.0" layoutY="45.0" prefHeight="26.0" prefWidth="117.0" AnchorPane.rightAnchor="15.0" />
+            <TextField layoutX="15.0" layoutY="145.0" prefHeight="26.0" prefWidth="45.0" AnchorPane.leftAnchor="15.0" />
+            <TextField layoutX="67.0" layoutY="145.0" prefHeight="26.0" prefWidth="199.0" AnchorPane.rightAnchor="15.0" />
+            <TextField layoutX="15.0" layoutY="195.0" prefHeight="26.0" prefWidth="252.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+            <TextField layoutX="15.0" layoutY="245.0" prefHeight="26.0" prefWidth="91.0" AnchorPane.leftAnchor="15.0" />
+            <TextField layoutX="114.0" layoutY="245.0" prefHeight="26.0" prefWidth="152.0" AnchorPane.rightAnchor="15.0" />
+            <TextField layoutX="15.0" layoutY="295.0" prefHeight="26.0" prefWidth="251.0" AnchorPane.bottomAnchor="39.0" AnchorPane.rightAnchor="15.0" />
+            <Button layoutX="108.0" layoutY="327.0" mnemonicParsing="false" text="Button" AnchorPane.bottomAnchor="7.0" />
+            <Label layoutX="14.0" layoutY="78.0" text="Pays" AnchorPane.leftAnchor="14.0" />
+            <TextField layoutX="15.0" layoutY="95.0" prefHeight="26.0" prefWidth="127.0" />
+            <TextField layoutX="149.0" layoutY="95.0" prefHeight="26.0" prefWidth="117.0" AnchorPane.rightAnchor="15.0" />
+            <Label layoutX="148.0" layoutY="78.0" text="Ville" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
