@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 public class HelloController {
     @FXML
     private Label welcomeText;
+    EmployeBean employeBean;
 
 
     @FXML
@@ -19,6 +20,7 @@ public class HelloController {
 
     public void initialize(){
 
+        employeBean = new EmployeBean();
 
 
     }

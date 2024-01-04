@@ -24,6 +24,14 @@ public class Employe {
         this.prenomEmploye = prenomEmploye;
     }
 
+    public Employe(String nomEmploye, String prenomEmploye, String mailEmploye, LocalDateTime dateEntreeEmploye, LocalDateTime dateSortieEmploye) {
+        this.nomEmploye = nomEmploye;
+        this.prenomEmploye = prenomEmploye;
+        this.mailEmploye = mailEmploye;
+        this.dateEntreeEmploye = dateEntreeEmploye;
+        this.dateSortieEmploye = dateSortieEmploye;
+    }
+
     public int getId_employe() {
         return id_employe;
     }

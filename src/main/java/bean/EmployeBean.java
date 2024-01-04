@@ -1,12 +1,10 @@
 package bean;
 
 import dao.DaoFactory;
-import model.Client;
 import model.Employe;
-import model.Ville;
+
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class EmployeBean {
@@ -17,9 +15,9 @@ public class EmployeBean {
     public EmployeBean() {
         Employe employe = new Employe();
 
-        employe.setNomEmploye("ElBouziani");
-        employe.setPrenomEmploye("Icham");
-        employe.setMailEmploye("elbouziani@gmail.fr");
+        employe.setNomEmploye("Darmanin");
+        employe.setPrenomEmploye("Gerald");
+        employe.setMailEmploye("geraldDarmanin@gmail.fr");
         employe.setDateEntreeEmploye(LocalDateTime.now());
         employe.setDateSortieEmploye(null);
         employe.setPasswordEmploye("password");

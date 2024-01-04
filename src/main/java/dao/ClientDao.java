@@ -3,7 +3,9 @@ package dao;
 import model.Client;
 
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 public class ClientDao extends DAO<Client, Integer>{
@@ -42,8 +44,25 @@ public class ClientDao extends DAO<Client, Integer>{
     }
 
     @Override
-    public boolean update(Client objet) {
-        return false;
+    public boolean update(Client client) {
+        String sqlRequest = "update Client set denominationSociale = ?, mailClient = ?," +
+                "numeroRueClient = ?, libelleRueClient = ?, completmentAdresseClient = ?" +
+                "codePostalClient = ?, numeroTva = ?, numTelClient = ?"+
+                "where id_client = ?";
+        try(PreparedStatement preparedStatement = connexion.prepareStatement(sqlRequest, Statement.RETURN_GENERATED_KEYS)){
+            preparedStatement.setString(1,client.getDenominationSociale());
+            preparedStatement.setString(2,client.getMailClient());
+            preparedStatement.setString(3,client.getNumeroRueCLient());
+            preparedStatement.setString(4, client.getLibelleRueClient());
+            preparedStatement.setString(5, client.getComplementAdresseClient());
+            preparedStatement.setString(6, client.getCodePostalClient());
+            preparedStatement.setString(7, client.getNumeroTva());
+            preparedStatement.setString(8,client.getNumTelClient());
+            preparedStatement.executeUpdate();
+            return true;
+        }catch (SQLException e){
+            return false;
+        }
     }
 
     @Override
