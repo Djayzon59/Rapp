@@ -19,9 +19,26 @@ public class Etablissement {
     private Ville ville;
 
 
-    public Etablissement() {
+    public Etablissement(String libelleEtablissement) {
+        this.libelleEtablissement=libelleEtablissement;
     }
 
+    public Etablissement(String libelleEtablissement, String numeroRueEtablissement, String libelleRueEtablissement, String complementAdresseEtablissement, String codePostalEtablissement, String numeroIdentification, String numMobileEtablissement, String numFixeEtablissement) {
+        this.libelleEtablissement=libelleEtablissement;
+        this.numeroRueEtablissement=numeroRueEtablissement;
+        this.libelleRueEtablissement=libelleRueEtablissement;
+        this.complementAdresseEtablissement=complementAdresseEtablissement;
+        this.codePostalEtablissement=codePostalEtablissement;
+        this.numeroIdentification=numeroIdentification;
+        this.numMobileEtablissement=numMobileEtablissement;
+        this.numFixeEtablissement=numFixeEtablissement;
+    }
+
+    public Etablissement() {
+        employe = new Employe();
+        client = new Client();
+        ville = new Ville();
+    }
 
     public int getId_etablissement() {
         return id_etablissement;
