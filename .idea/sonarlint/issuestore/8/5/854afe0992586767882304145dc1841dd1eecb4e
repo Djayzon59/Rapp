@@ -1,0 +1,7 @@
+
+‹
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÑÎëúÿÿÿÿ
+T
+java:S5993	"9Change the visibility of this constructor to "protected".(ŞØ™¾ûÿÿÿÿ
+c	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(—µ¨Çúÿÿÿÿ
+P	java:S125"<This block of commented-out lines of code should be removed.(¤àÒW

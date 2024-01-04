@@ -11,11 +11,11 @@ public class EmployeDao extends DAO<Employe, Integer> {
     public Employe getByID(Integer id) {
         Employe employe = null;
         try {
-            PreparedStatement preparedStatement = connexion.prepareStatement("SELECT * FROM employe where id_employe=?");
+            PreparedStatement preparedStatement = connexion.prepareStatement("SELECT nomEmploye,prenomEmploye,mailEmploye,dateEntreeEmploye,dateSortieEmploye FROM Employe where id_employe=?");
             preparedStatement.setInt(1, id);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
-               // employe = new Employe(rs.getInt(1), rs.getString(2));
+                employe = new Employe(rs.getString(1), rs.getString(2), rs.getString(3), rs.getTimestamp(4).toLocalDateTime(), rs.getTimestamp(5).toLocalDateTime());
             }
         } catch (SQLException e) {
             e.printStackTrace();
