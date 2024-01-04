@@ -11,7 +11,7 @@ public class Etablissement {
     private String numeroIdentification;
     private String latitude;
     private String longitude;
-    private String numMobileEtblissement;
+    private String numMobileEtablissement;
     private String numFixeEtablissement;
 
     private Employe employe;
@@ -95,12 +95,12 @@ public class Etablissement {
         this.longitude = longitude;
     }
 
-    public String getNumMobileEtblissement() {
-        return numMobileEtblissement;
+    public String getNumMobileEtablissement() {
+        return numMobileEtablissement;
     }
 
-    public void setNumMobileEtblissement(String numMobileEtblissement) {
-        this.numMobileEtblissement = numMobileEtblissement;
+    public void setNumMobileEtablissement(String numMobileEtablissement) {
+        this.numMobileEtablissement = numMobileEtablissement;
     }
 
     public String getNumFixeEtablissement() {
@@ -134,4 +134,6 @@ public class Etablissement {
     public void setVille(Ville ville) {
         this.ville = ville;
     }
+
+
 }
