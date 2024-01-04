@@ -1,36 +1,35 @@
 package dao;
 
-import model.Employe;
-import model.Pays;
+import model.Etablissement;
 
 import java.sql.*;
 import java.util.ArrayList;
 
-public class EmployeDao extends DAO<Employe, Integer> {
+public class EtablissementDao extends DAO<Etablissement, Integer> {
     @Override
-    public Employe getByID(Integer id) {
-        Employe employe = null;
+    public Etablissement getByID(Integer id) {
+        Etablissement etablissement = null;
         try {
-            PreparedStatement preparedStatement = connexion.prepareStatement("SELECT * FROM employe where id_employe=?");
+            PreparedStatement preparedStatement = connexion.prepareStatement("SELECT * FROM etablissement where id_etablissement=?");
             preparedStatement.setInt(1, id);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
-               // employe = new Employe(rs.getInt(1), rs.getString(2));
+               // etablissement = new Etablissement(rs.getInt(1), rs.getString(2));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return employe;
+        return etablissement;
     }
 
     @Override
-    public ArrayList<Employe> getAll() {
-        ArrayList<Employe> liste = new ArrayList<>();
+    public ArrayList<Etablissement> getAll() {
+        ArrayList<Etablissement> liste = new ArrayList<>();
         try(Statement stmt = connexion.createStatement()) {
-            String strCmd = "select nomEmploye,prenomEmploye from Employe";
+            String strCmd = "select nomEtablissement from Etablissement";
             ResultSet rs = stmt.executeQuery(strCmd);
             while (rs.next()) {
-                liste.add(new Employe(rs.getString(1),rs.getString(2)));
+                liste.add(new Etablissement(rs.getString(1),rs.getString(2)));
             }
             rs.close();
         }catch(Exception e){
@@ -40,19 +39,23 @@ public class EmployeDao extends DAO<Employe, Integer> {
     }
 
     @Override
-    public boolean insert(Employe employe) {
-        String sqlRequest = "INSERT INTO Employe VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    public boolean insert(Etablissement etablissement) {
+        String sqlRequest = "INSERT INTO Etablissement VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (PreparedStatement preparedStatement = connexion.prepareStatement(sqlRequest, Statement.RETURN_GENERATED_KEYS)) {
-            preparedStatement.setString(1, employe.getNomEmploye());
-            preparedStatement.setString(2, employe.getPrenomEmploye());
-            preparedStatement.setString(3, employe.getMailEmploye());
-            preparedStatement.setTimestamp(4, Timestamp.valueOf(employe.getDateEntreeEmploye()));
-            preparedStatement.setTimestamp(5, null);
-            preparedStatement.setString(6, employe.getPasswordEmploye());
-
-            preparedStatement.setInt(7, employe.getRole().getId_role());
-            preparedStatement.setInt(8, employe.getClient().getId_client());
+            preparedStatement.setString(1, etablissement.getLibelleEtablissement());
+            preparedStatement.setString(2, etablissement.getNumeroRueEtablissement());
+            preparedStatement.setString(3, etablissement.getLibelleRueEtablissement());
+            preparedStatement.setString(4, etablissement.getComplementAdresseEtablissement());
+            preparedStatement.setString(5, etablissement.getCodePostalEtablissement());
+            preparedStatement.setString(6, etablissement.getNumeroIdentification());
+            preparedStatement.setString(7, etablissement.getLatitude());
+            preparedStatement.setString(8, etablissement.getLongitude());
+            preparedStatement.setString(9, etablissement.getNumMobileEtablissement());
+            preparedStatement.setString(10, etablissement.getNumFixeEtablissement());
+            preparedStatement.setInt(11, etablissement.getEmploye().getId_employe());
+            preparedStatement.setInt(12, etablissement.getClient().getId_client());
+            preparedStatement.setInt(13, etablissement.getVille().getId_ville());
 
             preparedStatement.executeUpdate();
             return true;
@@ -63,18 +66,24 @@ public class EmployeDao extends DAO<Employe, Integer> {
     }
 
     @Override
-    public boolean update(Employe employe) {
-        String sqlRequest = "update Employe set nomEmploye = ?, prenomEmploye = ?," +
-                "mailEmploye = ?, dateEntreeEmploye = ?, dateSortieEmploye = ?" +
-                "passwordEmploye = ?"+
-                "where id_employe = ?";
+    public boolean update(Etablissement etablissement) {
+        String sqlRequest = "update Etablissement set libelleEtablissement = ?, numeroRueEtablissement = ?," +
+                "libelleRueEtablissement = ?, complementAdresseEtablissement = ?, codePostalEtablissement = ?" +
+                "latitude = ?, longitude = ?, numMobileEtablissement = ?, numFixeEtablissement = ?"+
+                "where id_etablissement = ?";
         try(PreparedStatement preparedStatement = connexion.prepareStatement(sqlRequest, Statement.RETURN_GENERATED_KEYS)){
-            preparedStatement.setString(1,employe.getNomEmploye());
-            preparedStatement.setString(2,employe.getPrenomEmploye());
-            preparedStatement.setString(3,employe.getMailEmploye());
-            preparedStatement.setTimestamp(4, Timestamp.valueOf(employe.getDateEntreeEmploye()));
-            preparedStatement.setTimestamp(5, Timestamp.valueOf(employe.getDateSortieEmploye()));
-            preparedStatement.setString(6, employe.getPasswordEmploye());
+            preparedStatement.setString(1, etablissement.getLibelleEtablissement());
+            preparedStatement.setString(2, etablissement.getNumeroRueEtablissement());
+            preparedStatement.setString(3, etablissement.getLibelleRueEtablissement());
+            preparedStatement.setString(4, etablissement.getComplementAdresseEtablissement());
+            preparedStatement.setString(5, etablissement.getCodePostalEtablissement());
+            preparedStatement.setString(7, etablissement.getLatitudcfe());
+            preparedStatement.setString(8, etablissement.getLongitude());
+            preparedStatement.setString(9, etablissement.getNumMobileEtablissement());
+            preparedStatement.setString(10, etablissement.getNumFixeEtablissement());
+            preparedStatement.setInt(11, etablissement.getEmploye().getId_employe());
+            preparedStatement.setInt(12, etablissement.getClient().getId_client());
+            preparedStatement.setInt(13, etablissement.getVille().getId_ville());
             preparedStatement.executeUpdate();
             return true;
         }catch (SQLException e){
@@ -83,10 +92,10 @@ public class EmployeDao extends DAO<Employe, Integer> {
     }
 
     @Override
-    public boolean delete(Employe employe) {
-        String sqlRequest = "delete from Employe where id_employe = ?";
+    public boolean delete(Etablissement etablissement) {
+        String sqlRequest = "delete from Etablissement where id_etablissement = ?";
         try(PreparedStatement preparedStatement = connexion.prepareStatement(sqlRequest)) {
-            preparedStatement.setInt(1,employe.getId_employe());
+            preparedStatement.setInt(1,etablissement.getId_etablissement());
             preparedStatement.executeUpdate();
             return true;
         }catch(SQLException e){
