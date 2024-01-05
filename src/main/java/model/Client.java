@@ -33,6 +33,17 @@ public class Client {
         this.password = password;
     }
 
+    public Client(String denominationSociale, String mailClient, String numeroRueCLient, String libelleRueClient, String complementAdresseClient, String codePostalClient, String numeroTva, String numTelClient, String password, Role role, Ville ville) {
+        this.denominationSociale = denominationSociale;
+        this.mailClient = mailClient;
+        this.numeroRueCLient = numeroRueCLient;
+        this.libelleRueClient = libelleRueClient;
+        this.complementAdresseClient = complementAdresseClient;
+        this.codePostalClient = codePostalClient;
+        this.numeroTva = numeroTva;
+        this.numTelClient = numTelClient;
+        this.password = password;
+    }
 
     public int getId_client() {
         return id_client;
