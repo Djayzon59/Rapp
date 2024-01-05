@@ -9,4 +9,6 @@ module fr.rapplication.rapp {
 
     opens fr.rapplication.rapp to javafx.fxml;
     exports fr.rapplication.rapp;
+    exports controllers;
+    opens controllers to javafx.fxml;
 }
