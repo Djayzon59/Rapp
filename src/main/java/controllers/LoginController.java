@@ -1,6 +1,7 @@
-package fr.rapplication.rapp;
+package controllers;
 
 import bean.ClientBean;
+import fr.rapplication.rapp.HelloApplication;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;

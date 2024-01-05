@@ -3,26 +3,23 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.infoClientViewController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="601.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-126.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="126.0">
-         <image>
-
-         </image>
-      </ImageView>
-      <AnchorPane layoutY="1.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #212121;" AnchorPane.bottomAnchor="274.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane layoutY="1.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #212121;" AnchorPane.bottomAnchor="274.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button layoutX="25.0" layoutY="31.0" mnemonicParsing="false" text="Mes employés" />
+         </children>
+      </AnchorPane>
       <SplitPane layoutX="131.0" prefHeight="400.0" prefWidth="340.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="131.0" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="10.0">
          <items>
             <AnchorPane prefHeight="200.0" prefWidth="374.0">
                <children>
-                  <Label layoutX="119.0" layoutY="14.0" text="Informations" />
+                  <Label layoutX="122.0" layoutY="14.0" text="Client" />
                   <GridPane layoutX="10.0" layoutY="73.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -39,27 +36,27 @@
                      </rowConstraints>
                      <children>
                         <Label text="Raison Sociale" />
-                        <Label fx:id="firstNameLabel" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="denominationSociale" text="Label" GridPane.columnIndex="1" />
                         <Label text="E-mail" GridPane.rowIndex="1" />
                         <Label text="Adresse" GridPane.rowIndex="2" />
                         <Label text="Ville" GridPane.rowIndex="3" />
                         <Label text="Code postal" GridPane.rowIndex="4" />
                         <Label text="Numéro de téléphone" GridPane.rowIndex="5" />
-                        <Label fx:id="lastNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label fx:id="streetLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label fx:id="cityLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label fx:id="postalCodeLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label fx:id="birthdayLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="mailClient" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="numeroRueClient" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="ville" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="codePostal" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="numeroTelephone" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <Label text="Numéro de TVA" GridPane.rowIndex="6" />
-                        <Label fx:id="birthdayLabel1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label fx:id="numeroTVA" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                      </children>
                   </GridPane>
-                  <Button layoutX="106.0" layoutY="300.0" mnemonicParsing="false" text="Modifier Information" />
-                  <Button layoutX="187.0" layoutY="339.0" mnemonicParsing="false" text="Etablissements" />
-                  <Button layoutX="61.0" layoutY="339.0" mnemonicParsing="false" text="Mes employés" />
+                  <Button layoutX="105.0" layoutY="316.0" mnemonicParsing="false" text="Modifier Information" />
                </children>
             </AnchorPane>
          </items>
       </SplitPane>
+      <Button layoutX="14.0" layoutY="364.0" mnemonicParsing="false" text="Sign out" />
+      <Button layoutX="45.0" layoutY="126.0" mnemonicParsing="false" text="Etablissements" />
    </children>
 </AnchorPane>
