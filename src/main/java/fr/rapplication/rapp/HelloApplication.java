@@ -1,5 +1,6 @@
 package fr.rapplication.rapp;
 
+import controllers.LoginController;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -45,7 +46,7 @@ public class HelloApplication extends Application {
     }
 
     public void switchClientView() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("info-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("home.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 780, 460);
         //scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
         Stage stage2 = new Stage();
