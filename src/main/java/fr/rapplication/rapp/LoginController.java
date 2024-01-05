@@ -1,16 +1,13 @@
 package fr.rapplication.rapp;
 
-import bean.ClientBean;
-import bean.EmployeBean;
-import bean.PaysBean;
-import bean.RoleBean;
+import bean.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 public class HelloController {
     @FXML
     private Label welcomeText;
-    EmployeBean employeBean;
+    EtablissementBean etablissementBean;
 
 
     @FXML
@@ -19,8 +16,6 @@ public class HelloController {
     }
 
     public void initialize(){
-
-        employeBean = new EmployeBean();
 
 
     }
