@@ -13,14 +13,13 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.rdtb.rfx.EmployeOverViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EmployeController">
     <children>
         <SplitPane dividerPositions="0.3988294314381271" layoutX="200.0" layoutY="120.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <items>
-            <SplitPane dividerPositions="0.30160857908847183" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+            <SplitPane orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
               <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="158.0" prefWidth="235.0" />
-                      <TableView fx:id="personTable" prefHeight="339.0" prefWidth="175.0">
+                      <TableView fx:id="employeTable" prefHeight="339.0" prefWidth="175.0">
                           <columns>
                               <TableColumn fx:id="firstNameColumn" prefWidth="90.0" text="Nom" />
                               <TableColumn fx:id="lastNameColumn" prefWidth="90.0" text="Prénom" />
@@ -48,16 +47,18 @@
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <Label text="Nom" />
+                                <Label text="Prénom" />
                                 <Label fx:id="firstNameLabel" text="Label" GridPane.columnIndex="1" />
-                                <Label text="Prénom" GridPane.rowIndex="1" />
+                                <Label text="Nom" GridPane.rowIndex="1" />
                                 <Label text="E-mail" GridPane.rowIndex="2" />
                                 <Label text="Date d'entrée" GridPane.rowIndex="3" />
-                                <Label text="Date de sortie" GridPane.rowIndex="4" />
+                                <Label text="Etablissement" GridPane.rowIndex="4" />
                                 <Label fx:id="lastNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                <Label fx:id="streetLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <Label fx:id="mailLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="ancienneteLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="etablissementLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="Role" GridPane.rowIndex="5" />
+                        <Label fx:id="roleLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                             </children>
                         </GridPane>
                         <ButtonBar layoutX="141.0" layoutY="319.0" prefHeight="40.0" prefWidth="261.0" AnchorPane.rightAnchor="14.0">
