@@ -12,6 +12,7 @@ public class PaysBean {
 
 
     public PaysBean(){
+        listePays =  DaoFactory.getPaysDAO().getAll();
     }
 
 
