@@ -34,6 +34,22 @@ public class Etablissement {
         this.numFixeEtablissement=numFixeEtablissement;
     }
 
+    public Etablissement(int id_etablissement, String libelleEtablissement, String numeroRueEtablissement, String libelleRueEtablissement, String complementAdresseEtablissement, String codePostalEtablissement, String numeroIdentification, String latitude, String longitude, String numMobileEtablissement, String numFixeEtablissement, Employe employe, Ville ville) {
+        this.id_etablissement = id_etablissement;
+        this.libelleEtablissement = libelleEtablissement;
+        this.numeroRueEtablissement = numeroRueEtablissement;
+        this.libelleRueEtablissement = libelleRueEtablissement;
+        this.complementAdresseEtablissement = complementAdresseEtablissement;
+        this.codePostalEtablissement = codePostalEtablissement;
+        this.numeroIdentification = numeroIdentification;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.numMobileEtablissement = numMobileEtablissement;
+        this.numFixeEtablissement = numFixeEtablissement;
+        this.employe = new Employe();
+        this.ville = new Ville();
+    }
+
     public Etablissement() {
         employe = new Employe();
         client = new Client();

@@ -2,6 +2,7 @@ package dao;
 
 import model.Employe;
 import model.Etablissement;
+import model.Ville;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -30,10 +31,14 @@ public class EtablissementDao extends DAO<Etablissement, Integer> {
     public ArrayList<Etablissement> getAll() {
         ArrayList<Etablissement> liste = new ArrayList<>();
         try(Statement stmt = connexion.createStatement()) {
-            String strCmd = "select libelleEtablissement from Etablissement";
+            String strCmd = "select * from Etablissement";
             ResultSet rs = stmt.executeQuery(strCmd);
             while (rs.next()) {
-                liste.add(new Etablissement(rs.getString(1)));
+                liste.add(new Etablissement(rs.getInt(1),rs.getString(2)
+                ,rs.getString(3), rs.getString(4),rs.getString(5)
+                ,rs.getString(6),rs.getString(7),rs.getString(8)
+                ,rs.getString(9),rs.getString(10),rs.getString(11)
+                ,new Employe(rs.getString(12)), new Ville(rs.getString(13))));
             }
             rs.close();
         }catch(Exception e){
@@ -44,6 +49,7 @@ public class EtablissementDao extends DAO<Etablissement, Integer> {
 
     @Override
     public boolean insert(Etablissement etablissement) {
+
         String sqlRequest = "INSERT INTO Etablissement VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (PreparedStatement preparedStatement = connexion.prepareStatement(sqlRequest, Statement.RETURN_GENERATED_KEYS)) {

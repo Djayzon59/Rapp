@@ -11,24 +11,12 @@ public class EtablissementBean {
 
 
     public EtablissementBean() {
+        listeEtablissements= DaoFactory.getEtablissementDAO().getAll();
+    }
 
-
-        Etablissement etablissement = new Etablissement();
-
-        etablissement.setLibelleEtablissement("L'Elysée");
-        etablissement.setNumeroRueEtablissement("11");
-        etablissement.setLibelleRueEtablissement("Boulevard des Champs Elysée");
-        etablissement.setComplementAdresseEtablissement("Appartement 4");
-        etablissement.setCodePostalEtablissement("75000");
-        etablissement.setNumeroIdentification("FR987978799");
-        etablissement.setLatitude("12.14.505.6");
-        etablissement.setLongitude("09.56.780.8");
-        etablissement.setNumMobileEtablissement("0612131415");
-        etablissement.setNumFixeEtablissement("0340789035");
-        etablissement.getEmploye().setId_employe(20);
-        etablissement.getClient().setId_client(7);
-        etablissement.getVille().setId_ville(2);
-        DaoFactory.getEtablissementDAO().insert(etablissement);
+    public boolean addEtablissement(Etablissement etablissement){
+        boolean isInserted = DaoFactory.getEtablissementDAO().insert(etablissement);
+        return isInserted;
     }
 
     public ArrayList<Etablissement> getListeEtablissements() {

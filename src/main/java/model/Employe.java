@@ -19,7 +19,17 @@ public class Employe {
         client=new Client();
     }
 
+    public Employe(String nomEmploye) {
+        this.nomEmploye = nomEmploye;
+    }
+
     public Employe(String nomEmploye, String prenomEmploye) {
+        this.nomEmploye = nomEmploye;
+        this.prenomEmploye = prenomEmploye;
+    }
+
+    public Employe(int id_employe, String nomEmploye, String prenomEmploye) {
+        this.id_employe = id_employe;
         this.nomEmploye = nomEmploye;
         this.prenomEmploye = prenomEmploye;
     }
@@ -102,5 +112,10 @@ public class Employe {
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    @Override
+    public String toString() {
+        return nomEmploye  + " " + prenomEmploye ;
     }
 }

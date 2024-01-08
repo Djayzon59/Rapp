@@ -27,10 +27,10 @@ public class EmployeDao extends DAO<Employe, Integer> {
     public ArrayList<Employe> getAll() {
         ArrayList<Employe> liste = new ArrayList<>();
         try(Statement stmt = connexion.createStatement()) {
-            String strCmd = "select nomEmploye,prenomEmploye from Employe";
+            String strCmd = "select id_employe,nomEmploye,prenomEmploye from Employe";
             ResultSet rs = stmt.executeQuery(strCmd);
             while (rs.next()) {
-                liste.add(new Employe(rs.getString(1),rs.getString(2)));
+                liste.add(new Employe(rs.getInt(1),rs.getString(2), rs.getString(3)));
             }
             rs.close();
         }catch(Exception e){
