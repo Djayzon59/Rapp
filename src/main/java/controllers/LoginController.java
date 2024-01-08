@@ -40,6 +40,7 @@ public class LoginController {
         if (!isConnectionValide) {
             alerteConnexionLabel.setText("Login ou Mot de passe invalide !!");
         } else {
+            helloApplication.setClient(clientBean.recupererClient(email,passWord));
             helloApplication.getPrimaryStage().close();
             helloApplication.switchClientView();
         }

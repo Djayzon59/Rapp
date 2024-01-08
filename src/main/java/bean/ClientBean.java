@@ -25,6 +25,11 @@ public class ClientBean {
         return true;
     }
 
+    public Client recupererClient(String mail, String mdp){
+        Client client = DaoFactory.getClientDAO().searchConnexion(mail, mdp);
+        return client;
+    }
+
     public ArrayList<Client> getListeClients() {
         return listeClients;
     }

@@ -13,17 +13,7 @@ public class EmployeBean {
 
 
     public EmployeBean() {
-        Employe employe = new Employe();
-
-        employe.setNomEmploye("Darmanin");
-        employe.setPrenomEmploye("Gerald");
-        employe.setMailEmploye("geraldDarmanin@gmail.fr");
-        employe.setDateEntreeEmploye(LocalDateTime.now());
-        employe.setDateSortieEmploye(null);
-        employe.setPasswordEmploye("password");
-        employe.getRole().setId_role(3);
-        employe.getClient().setId_client(7);
-        DaoFactory.getEmployeDAO().insert(employe);
+        listeEmployes = DaoFactory.getEmployeDAO().getAll();
     }
 
 
