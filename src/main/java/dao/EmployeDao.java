@@ -1,7 +1,6 @@
 package dao;
 
 import model.Employe;
-import model.Pays;
 
 import java.sql.*;
 import java.util.ArrayList;

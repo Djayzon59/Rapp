@@ -1,5 +1,6 @@
 package fr.rapplication.rapp;
 
+import controllers.AjouterEmployeController;
 import controllers.AjouterEtablissementController;
 import controllers.EtablissementController;
 import controllers.LoginController;
@@ -87,6 +88,33 @@ public class HelloApplication extends Application {
         stage2 = new Stage();
         stage2.initModality(Modality.APPLICATION_MODAL);
         stage2.setTitle("Reserve App - Ajout établissement");
+        stage2.getIcons().add(new Image(getClass().getResourceAsStream("/images/zen.png")));
+        stage2.setScene(scene);
+        stage2.show();
+    }
+
+    public void switchEmployeView() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("employe.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 500);
+        EtablissementController etablissementOverViewController = fxmlLoader.getController();
+        etablissementOverViewController.setHelloApplication(this);
+        //scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
+        stage2 = new Stage();
+        stage2.setTitle("Reserve App - Mes employés");
+        stage2.getIcons().add(new Image(getClass().getResourceAsStream("/images/zen.png")));
+        stage2.setScene(scene);
+        stage2.show();
+    }
+
+    public void switchAjoutEmploye() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ajouterEmploye.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 700, 700);
+        AjouterEmployeController ajouterEmployeController = fxmlLoader.getController();
+        ajouterEmployeController.setHelloApplication(this);
+        //scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
+        stage2 = new Stage();
+        stage2.initModality(Modality.APPLICATION_MODAL);
+        stage2.setTitle("Reserve App - Ajout employé");
         stage2.getIcons().add(new Image(getClass().getResourceAsStream("/images/zen.png")));
         stage2.setScene(scene);
         stage2.show();

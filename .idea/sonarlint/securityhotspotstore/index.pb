@@ -46,3 +46,9 @@ c
 3src/main/java/controllers/ClientEditController.java,d/0/d01df2559a4533e09ace57ab0141e0bc3f2d8e4c
 g
 7src/main/java/controllers/infoClientViewController.java,2/d/2df02540978a1275fdbdb9e5c0cb3f9337984b49
+^
+.src/main/java/controllers/LoginController.java,e/7/e7c3324293af4a0146a78e5c2cbb4cec9472ab7f
+]
+-src/main/java/controllers/HomeController.java,b/a/ba5292a4c250a0761495666f7aeb47e8d3dd5067
+`
+0src/main/java/controllers/EmployeController.java,7/5/7565a7f783fc8c393d12930b29b5c76ddc849383
