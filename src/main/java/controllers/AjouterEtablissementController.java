@@ -98,6 +98,7 @@ public class AjouterEtablissementController {
     }
 
     public void onAnnulerclickButton() throws IOException {
+        helloApplication.getStage2().close();
         helloApplication.switchEtablissementView();
     }
 

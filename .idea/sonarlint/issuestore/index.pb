@@ -40,8 +40,6 @@ W
 'src/main/java/dao/EtablissementDao.java,a/a/aa204e35fc8328ca06b79fa8db9212c0873b3d09
 Y
 )src/main/java/bean/EtablissementBean.java,9/7/9753a4c629d99a70abac09c07b313f2684471c13
-n
->src/main/java/controllers/EtablissementOverViewController.java,a/5/a57f02b3dcb40809c17953a296c69b4a66d42f22
 c
 3src/main/java/controllers/ClientEditController.java,d/0/d01df2559a4533e09ace57ab0141e0bc3f2d8e4c
 g

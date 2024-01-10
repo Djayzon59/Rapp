@@ -40,7 +40,7 @@ public class EmployeController {
     private EmployeBean employeBean;
     private HelloApplication helloApplication;
 
-    @FXML
+   /* @FXML
     private void initialize() {
         employeBean = new EmployeBean();
         firstNameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getPrenomEmploye()));
@@ -70,7 +70,7 @@ public class EmployeController {
             etablissementLabel.setText("");
             roleLabel.setText("");
         }
-    }
+    }*/
 
     @FXML
     public void addEmploye() throws IOException {

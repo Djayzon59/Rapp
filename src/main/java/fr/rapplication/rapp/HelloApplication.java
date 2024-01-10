@@ -1,14 +1,12 @@
 package fr.rapplication.rapp;
 
-import controllers.AjouterEmployeController;
-import controllers.AjouterEtablissementController;
-import controllers.EtablissementController;
-import controllers.LoginController;
+import controllers.*;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -32,15 +30,15 @@ public class HelloApplication extends Application {
         this.primaryStage.setResizable(false);
         this.client = new Client();
         initRootLayout();
-        //switchEtablissementView();
     }
 
     public void initRootLayout() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 780, 460);
+            rootLayout = (BorderPane) fxmlLoader.load();
             LoginController loginController = fxmlLoader.getController();
             loginController.setHelloApplication(this);
+            Scene scene = new Scene(rootLayout, 880, 560);
             scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
             this.primaryStage.setScene(scene);
             this.primaryStage.show();
@@ -54,29 +52,24 @@ public class HelloApplication extends Application {
         launch();
     }
 
-    public void switchClientView() throws IOException {
+    public void switchHomeView() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 780, 460);
-        //scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
-        stage2 = new Stage();
-        stage2.setTitle("Reserve App - Mes infos");
-        stage2.getIcons().add(new Image(getClass().getResourceAsStream("/images/zen.png")));
-        stage2.setScene(scene);
-        stage2.show();
-
+        AnchorPane clientView =(AnchorPane) fxmlLoader.load();
+        rootLayout.setCenter(clientView);
+        Scene scene = primaryStage.getScene();
+        HomeController homeController = fxmlLoader.getController();
+        homeController.setHelloApplication(this);
+        scene.getStylesheets().add(getClass().getResource("home.css").toExternalForm());
     }
 
     public void switchEtablissementView() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("etablissements.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 500);
+        AnchorPane etablissementView = fxmlLoader.load();
+        rootLayout.setCenter(etablissementView);
+        Scene scene = primaryStage.getScene();
         EtablissementController etablissementOverViewController = fxmlLoader.getController();
         etablissementOverViewController.setHelloApplication(this);
-        //scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
-        stage2 = new Stage();
-        stage2.setTitle("Reserve App - Mes établissements");
-        stage2.getIcons().add(new Image(getClass().getResourceAsStream("/images/zen.png")));
-        stage2.setScene(scene);
-        stage2.show();
+        scene.getStylesheets().add(getClass().getResource("etablissement.css").toExternalForm());
     }
 
     public void switchAjoutEtablissement() throws IOException {
@@ -84,33 +77,30 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 700, 700);
         AjouterEtablissementController ajouterEtablissementController = fxmlLoader.getController();
         ajouterEtablissementController.setHelloApplication(this);
-        //scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
         stage2 = new Stage();
         stage2.initModality(Modality.APPLICATION_MODAL);
         stage2.setTitle("Reserve App - Ajout établissement");
-        stage2.getIcons().add(new Image(getClass().getResourceAsStream("/images/zen.png")));
+        stage2.getIcons().add(new Image(getClass().getResourceAsStream("/images/login.jpg")));
         stage2.setScene(scene);
+        stage2.setResizable(false);
         stage2.show();
     }
 
     public void switchEmployeView() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("employe.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 500);
-        EtablissementController etablissementOverViewController = fxmlLoader.getController();
-        etablissementOverViewController.setHelloApplication(this);
-        //scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
-        stage2 = new Stage();
-        stage2.setTitle("Reserve App - Mes employés");
-        stage2.getIcons().add(new Image(getClass().getResourceAsStream("/images/zen.png")));
-        stage2.setScene(scene);
-        stage2.show();
+        AnchorPane employeView = (AnchorPane) fxmlLoader.load();
+        rootLayout.setCenter(employeView);
+        Scene scene = primaryStage.getScene();
+        EmployeController employeController = fxmlLoader.getController();
+        employeController.setHelloApplication(this);
+
     }
 
     public void switchAjoutEmploye() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ajouterEmploye.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 700, 700);
         AjouterEmployeController ajouterEmployeController = fxmlLoader.getController();
-        ajouterEmployeController.setHelloApplication(this);
+        //ajouterEmployeController.setHelloApplication(this);
         //scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
         stage2 = new Stage();
         stage2.initModality(Modality.APPLICATION_MODAL);

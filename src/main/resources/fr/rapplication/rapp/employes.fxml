@@ -63,15 +63,13 @@
                         </GridPane>
                         <ButtonBar layoutX="141.0" layoutY="319.0" prefHeight="40.0" prefWidth="261.0" AnchorPane.rightAnchor="14.0">
                             <buttons>
-                                <Button mnemonicParsing="false" onAction="#handleEditPerson" text="Modifier" />
-                                <Button mnemonicParsing="false" onAction="#handleDeletePerson" prefHeight="26.0" prefWidth="74.0" text="Supprimer" />
-                                <Button mnemonicParsing="false" onAction="#handleNewPerson" text="Nouveau" />
+                                <Button mnemonicParsing="false"  text="Modifier" />
+                                <Button mnemonicParsing="false"  prefHeight="26.0" prefWidth="74.0" text="Supprimer" />
+                                <Button mnemonicParsing="false"  text="Nouveau" />
                             </buttons>
                         </ButtonBar>
                   <ImageView fitHeight="98.0" fitWidth="123.0" layoutX="192.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../photo-avatar-profil.png" />
-                     </image>
+
                   </ImageView>
                     </children>
                 </AnchorPane>
