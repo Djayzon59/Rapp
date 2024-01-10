@@ -14,14 +14,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AjouterEtablissementController">
    <children>
       <VBox layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #303030;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" text="Renseignements établissement" textAlignment="CENTER" textFill="WHITE">
                <VBox.margin>
-                  <Insets left="230.0" top="15.0" />
+                  <Insets left="250.0" top="15.0" />
                </VBox.margin>
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -80,20 +79,23 @@
                   <Label text="Pays établissement :" textFill="WHITE" GridPane.rowIndex="1" />
                   <TextField fx:id="villeTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <Label text="Gérant :" textFill="WHITE" />
-                  <ComboBox fx:id="gerantComboBox" prefHeight="25.0" prefWidth="316.0" GridPane.columnIndex="1" />
-                  <ComboBox fx:id="paysComboBox" prefHeight="25.0" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="gerantComboBox" prefHeight="25.0" prefWidth="331.0" GridPane.columnIndex="1" />
+                  <ComboBox fx:id="paysComboBox" prefHeight="25.0" prefWidth="339.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
             </GridPane>
-            <ButtonBar prefHeight="74.0" prefWidth="680.0">
+            <ButtonBar prefHeight="58.0" prefWidth="180.0">
               <buttons>
-                <Button mnemonicParsing="false" onAction="#enregistrerEtablissement" text="Enregistrer" />
-                  <Button mnemonicParsing="false" text="Annuler" />
+                <Button mnemonicParsing="false" onAction="#enregistrerEtablissement" text="Enregistrer">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets></Button>
+                  <Button mnemonicParsing="false" onAction="#onAnnulerclickButton" text="Annuler" />
               </buttons>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <VBox.margin>
-                  <Insets top="20.0" />
+                  <Insets left="300.0" right="250.0" top="20.0" />
                </VBox.margin>
             </ButtonBar>
          </children>

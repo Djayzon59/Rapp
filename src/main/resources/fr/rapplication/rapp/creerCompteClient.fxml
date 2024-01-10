@@ -10,9 +10,7 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ie.rdtb.rfx.CustomerView">
    <children>
       <ImageView fitHeight="400.0" fitWidth="601.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-126.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="126.0">
-         <image>
-            <Image url="@../../../../../../../../imageFX.jpeg" />
-         </image>
+
       </ImageView>
       <AnchorPane layoutY="1.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #212121;" AnchorPane.bottomAnchor="274.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <AnchorPane layoutX="160.0" layoutY="28.0" prefHeight="307.0" prefWidth="281.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="20.0">

@@ -28,7 +28,6 @@ public class LoginController {
 
     public void initialize() {
         clientBean = new ClientBean();
-        helloApplication = new HelloApplication();
     }
 
     @FXML
@@ -41,11 +40,14 @@ public class LoginController {
             alerteConnexionLabel.setText("Login ou Mot de passe invalide !!");
         } else {
             helloApplication.setClient(clientBean.recupererClient(email,passWord));
-            helloApplication.getPrimaryStage().close();
-            helloApplication.switchClientView();
+            helloApplication.switchHomeView();
         }
 
 
+    }
+
+    public HelloApplication getHelloApplication() {
+        return helloApplication;
     }
 
     public void setHelloApplication(HelloApplication helloApplication) {

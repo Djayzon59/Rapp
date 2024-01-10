@@ -5,9 +5,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Client;
-import model.Ville;
 
-public class ClientEditController {
+public class ModifierClientController {
 
     @FXML
     private TextField denominationSociale;

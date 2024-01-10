@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -13,7 +14,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
    <center>
       <AnchorPane fx:id="vboxCenter" prefHeight="498.0" prefWidth="780.0" BorderPane.alignment="CENTER">
          <children>
@@ -39,16 +40,22 @@
                            </stops>
                         </RadialGradient>
                      </textFill>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
                   </Label>
+                  <Separator prefHeight="14.0" prefWidth="599.0" />
                </children>
             </VBox>
-            <TextField fx:id="mailTextField" layoutX="114.0" layoutY="152.0" prefHeight="48.0" prefWidth="242.0" promptText="Identifiant" />
-            <PasswordField fx:id="passwordTextField" layoutX="114.0" layoutY="231.0" prefHeight="49.0" prefWidth="242.0" promptText="Mot de passe" />
-            <Button layoutX="171.0" layoutY="307.0" mnemonicParsing="false" onAction="#onConnectClickButton" prefHeight="34.0" prefWidth="129.0" text="Connect" />
-            <Label fx:id="alerteConnexionLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="108.0" layoutY="350.0" prefHeight="17.0" prefWidth="254.0" textAlignment="CENTER" textFill="WHITE" />
-            <Separator layoutX="401.0" layoutY="111.0" orientation="VERTICAL" prefHeight="239.0" prefWidth="0.0" />
-            <Separator layoutX="91.0" layoutY="86.0" prefHeight="14.0" prefWidth="599.0" />
+            <TextField fx:id="mailTextField" layoutX="137.0" layoutY="170.0" prefHeight="48.0" prefWidth="242.0" promptText="Identifiant" />
+            <PasswordField fx:id="passwordTextField" layoutX="137.0" layoutY="259.0" prefHeight="49.0" prefWidth="242.0" promptText="Mot de passe" />
+            <Button layoutX="194.0" layoutY="333.0" mnemonicParsing="false" onAction="#onConnectClickButton" prefHeight="34.0" prefWidth="129.0" text="Connect" />
+            <Label fx:id="alerteConnexionLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="131.0" layoutY="378.0" prefHeight="17.0" prefWidth="254.0" textAlignment="CENTER" textFill="WHITE" />
+            <Separator layoutX="432.0" layoutY="123.0" orientation="VERTICAL" prefHeight="273.0" prefWidth="6.0" />
          </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
       </AnchorPane>
    </center>
 </BorderPane>

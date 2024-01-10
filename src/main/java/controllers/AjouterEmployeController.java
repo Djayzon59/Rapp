@@ -40,9 +40,9 @@ public class AjouterEmployeController {
         etablissementComboBox.setItems(FXCollections.observableArrayList(etablissementBean.getListeEtablissements()));
         roleComboBox.setItems(FXCollections.observableList(roleBean.getListeRoles()));
     }
+}
 
-
-    @FXML
+    /*@FXML
     public void enregistrerEmploye() throws IOException {
 
         Employe employe = new Employe();
@@ -80,3 +80,5 @@ public class AjouterEmployeController {
     }
 
 }
+*/
+

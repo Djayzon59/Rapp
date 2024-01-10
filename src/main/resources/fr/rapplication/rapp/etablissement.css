@@ -1,0 +1,5 @@
+#BorderPane{
+    -fx-background-image: url('../../../images/login.jpg');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
