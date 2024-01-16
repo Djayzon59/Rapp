@@ -21,12 +21,12 @@ public class VilleBean {
     }
 
 
-    public boolean isExisting(Ville ville){
+    public int returnIdVille(Ville ville){
          ville = DaoFactory.getVilleDAO().getByNom(ville.getLibelleVille());
         if(ville == null){
-            return false;
+            return 0;
         }
-        return true;
+        return ville.getId_ville();
     }
 
     public void ajouterVille(Ville ville){

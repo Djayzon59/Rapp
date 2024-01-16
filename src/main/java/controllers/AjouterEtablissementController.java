@@ -69,8 +69,13 @@ public class AjouterEtablissementController {
 
         etablissement.setVille(new Ville(villeTextField.getText()));
         etablissement.getVille().setPays(paysComboBox.getValue());
-        if (!villeBean.isExisting(etablissement.getVille()))
+
+        int idVille = villeBean.returnIdVille(etablissement.getVille());
+        System.out.println(idVille);
+        if ( idVille == 0)
             villeBean.ajouterVille(etablissement.getVille());
+        else
+            etablissement.getVille().setId_ville(idVille);
 
         etablissement.setLibelleEtablissement(libelleEtablissementTextField.getText());
         etablissement.setNumeroRueEtablissement(numeroRueTextField.getText());
@@ -85,7 +90,6 @@ public class AjouterEtablissementController {
 
         etablissement.getEmploye().setId_employe(gerantComboBox.getValue().getId_employe());
         etablissement.getClient().setId_client(7);
-        etablissement.getVille().setId_ville(villeBean.recupererIdVille(etablissement.getVille()));
 
         etablissementBean.addEtablissement(etablissement);
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -93,7 +97,7 @@ public class AjouterEtablissementController {
         alert.setTitle("Confirmation");
         alert.setContentText("Votre établissement a été ajouté avec succès !");
         alert.showAndWait();
-
+        helloApplication.getStage2().close();
         helloApplication.switchEtablissementView();
     }
 

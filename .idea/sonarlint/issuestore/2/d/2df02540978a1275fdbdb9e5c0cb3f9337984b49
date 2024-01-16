@@ -1,15 +1,0 @@
-
-n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÃÚÿ˜ùÿÿÿÿ8Æ´ÏÄÍ1
-£
-java:S1186#"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ˆå¶šûÿÿÿÿ8Ù´ÏÄÍ1
-£
-java:S1186B"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(µ£şÕùÿÿÿÿ8Ù´ÏÄÍ1
-w
-java:S1450"URemove the "client" field and declare it as a local variable in the relevant methods.(‚Ø–øùÿÿÿÿ8Ù´ÏÄÍ1
-{
-java:S1450"YRemove the "infoShower" field and declare it as a local variable in the relevant methods.(åú‚±şÿÿÿÿ8³ÇĞÄÍ1
-]	java:S1256"<This block of commented-out lines of code should be removed.(ÿ–Ã“şÿÿÿÿ8Ü´ÏÄÍ1
-P
-java:S1068".Remove this unused "infoShower" private field.(åú‚±şÿÿÿÿ8İ´ÏÄÍ1
-L
-java:S1068"*Remove this unused "client" private field.(‚Ø–øùÿÿÿÿ8İ´ÏÄÍ1
