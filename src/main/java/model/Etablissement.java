@@ -46,8 +46,8 @@ public class Etablissement {
         this.longitude = longitude;
         this.numMobileEtablissement = numMobileEtablissement;
         this.numFixeEtablissement = numFixeEtablissement;
-        this.employe = new Employe();
-        this.ville = new Ville();
+        this.employe = employe;
+        this.ville = ville;
     }
 
     public Etablissement() {
@@ -168,5 +168,12 @@ public class Etablissement {
         this.ville = ville;
     }
 
-
+    @Override
+    public String toString() {
+        return "Etablissement{" +
+                "libelleEtablissement='" + libelleEtablissement + '\'' +
+                ", employe=" + employe +
+                ", ville=" + ville +
+                '}';
+    }
 }

@@ -19,6 +19,7 @@ public class Client {
 
     public Client() {
         role = new Role();
+        ville = new Ville();
     }
 
     public Client(String denominationSociale, String mailClient, String numeroRueCLient, String libelleRueClient, String complementAdresseClient, String codePostalClient, String numeroTva, String numTelClient, String password) {
@@ -44,6 +45,8 @@ public class Client {
         this.numeroTva = numeroTva;
         this.numTelClient = numTelClient;
         this.password = password;
+        this.ville = new Ville();
+        this.ville.setLibelleVille(ville.getLibelleVille());
     }
 
     public int getId_client() {

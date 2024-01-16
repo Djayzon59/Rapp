@@ -1,7 +1,9 @@
 package bean;
 
 import dao.DaoFactory;
+import javafx.scene.control.Alert;
 import model.Etablissement;
+import model.Ville;
 
 import java.util.ArrayList;
 
@@ -15,8 +17,22 @@ public class EtablissementBean {
     }
 
     public boolean addEtablissement(Etablissement etablissement){
-        boolean isInserted = DaoFactory.getEtablissementDAO().insert(etablissement);
-        return isInserted;
+        return DaoFactory.getEtablissementDAO().insert(etablissement);
+    }
+
+    public boolean deleteEtablissement(Etablissement etablissement){
+        if(DaoFactory.getVilleDAO().counterEtablissementByVille(etablissement.getVille()) == 1){
+            System.out.println(etablissement.getVille().getId_ville());
+            DaoFactory.getEtablissementDAO().delete(etablissement);
+            DaoFactory.getVilleDAO().delete(etablissement.getVille());
+        }else{
+            DaoFactory.getEtablissementDAO().delete(etablissement);
+        }
+        return true;
+    }
+
+    public boolean updateEtablissement(Etablissement etablissement){
+        return DaoFactory.getEtablissementDAO().update(etablissement);
     }
 
     public ArrayList<Etablissement> getListeEtablissements() {

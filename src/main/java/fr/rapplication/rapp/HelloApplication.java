@@ -11,6 +11,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Client;
+import model.Etablissement;
 
 import java.io.IOException;
 
@@ -21,6 +22,8 @@ public class HelloApplication extends Application {
     private Stage primaryStage;
     private Stage stage2;
     private Client client;
+    Etablissement etablissement;
+
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -30,6 +33,7 @@ public class HelloApplication extends Application {
         this.primaryStage.setResizable(false);
         this.client = new Client();
         initRootLayout();
+
     }
 
     public void initRootLayout() {
@@ -60,6 +64,7 @@ public class HelloApplication extends Application {
         HomeController homeController = fxmlLoader.getController();
         homeController.setHelloApplication(this);
         scene.getStylesheets().add(getClass().getResource("home.css").toExternalForm());
+        homeController.setClient(this.client);
     }
 
     public void switchEtablissementView() throws IOException {
@@ -67,8 +72,9 @@ public class HelloApplication extends Application {
         AnchorPane etablissementView = fxmlLoader.load();
         rootLayout.setCenter(etablissementView);
         Scene scene = primaryStage.getScene();
-        EtablissementController etablissementOverViewController = fxmlLoader.getController();
-        etablissementOverViewController.setHelloApplication(this);
+        EtablissementController etablissementController = fxmlLoader.getController();
+        etablissementController.setHelloApplication(this);
+        etablissementController.setEtablissement();
         scene.getStylesheets().add(getClass().getResource("etablissement.css").toExternalForm());
     }
 
@@ -86,8 +92,24 @@ public class HelloApplication extends Application {
         stage2.show();
     }
 
+    public void switchModifierEtablissement() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("modifierEtablissement.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 700, 700);
+        ModifierEtablissementController modifierEtablissementController = fxmlLoader.getController();
+        modifierEtablissementController.setHelloApplication(this);
+        modifierEtablissementController.renseignerChamps();
+        stage2 = new Stage();
+        stage2.initModality(Modality.APPLICATION_MODAL);
+        stage2.setTitle("Reserve App - Modifier établissement");
+        stage2.getIcons().add(new Image(getClass().getResourceAsStream("/images/login.jpg")));
+        stage2.setScene(scene);
+        stage2.setResizable(false);
+        stage2.show();
+    }
+
     public void switchEmployeView() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("employe.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("employes.fxml"));
         AnchorPane employeView = (AnchorPane) fxmlLoader.load();
         rootLayout.setCenter(employeView);
         Scene scene = primaryStage.getScene();
@@ -109,6 +131,19 @@ public class HelloApplication extends Application {
         stage2.setScene(scene);
         stage2.show();
     }
+    public void switchModifierInfoCLient() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("modifierInfoClient.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(),550,650);
+        ModifierClientController modifierClientController = fxmlLoader.getController();
+        modifierClientController.setHelloApplication(this);
+        stage2 = new Stage();
+        stage2.initModality(Modality.APPLICATION_MODAL);
+        stage2.setTitle("Reserve App - Modifier mes infos");
+        //stage2.getIcons().add(new Image(getClass().getResourceAsStream("/images/zen.png")));
+        stage2.setScene(scene);
+        stage2.show();
+    }
+
 
     public Stage getPrimaryStage() {
         return primaryStage;
@@ -132,5 +167,13 @@ public class HelloApplication extends Application {
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public Etablissement getEtablissement() {
+        return etablissement;
+    }
+
+    public void setEtablissement(Etablissement etablissement) {
+        this.etablissement = etablissement;
     }
 }

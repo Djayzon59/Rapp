@@ -1,6 +1,7 @@
 package dao;
 
 import model.Employe;
+import model.Etablissement;
 import model.Ville;
 
 import java.sql.PreparedStatement;
@@ -11,8 +12,19 @@ import java.util.ArrayList;
 
 public class VilleDao extends DAO <Ville, Integer> {
     @Override
-    public Ville getByID(Integer integer) {
-        return null;
+    public Ville getByID(Integer id) {
+        Ville ville = null;
+        try {
+            PreparedStatement preparedStatement = connexion.prepareStatement("SELECT * FROM etablissement where id_etablissement=?");
+            preparedStatement.setInt(1, id);
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next()) {
+                ville = new Ville(rs.getInt(1),rs.getString(2));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ville;
     }
 
     @Override
@@ -46,9 +58,18 @@ public class VilleDao extends DAO <Ville, Integer> {
     }
 
     @Override
-    public boolean delete(Ville objet) {
-        return false;
+    public boolean delete(Ville ville) {
+        String sqlRequest = "delete from Ville where id_ville = ? ";
+        try(PreparedStatement preparedStatement = connexion.prepareStatement(sqlRequest)) {
+            preparedStatement.setInt(1,ville.getId_ville());
+            preparedStatement.executeUpdate();
+            return true;
+        }catch(SQLException e){
+            return false;
+        }
+
     }
+
 
     public Ville getByNom(String libelleVille){
         Ville ville = null;
@@ -83,6 +104,29 @@ public class VilleDao extends DAO <Ville, Integer> {
             e.printStackTrace();
         }
         return -1;
+    }
+
+    public int counterEtablissementByVille(Ville ville) {
+        int counter = 0;
+        try {
+            String sqlRequest = "SELECT COUNT(*) AS nombreEtablissements " +
+                    "FROM Etablissement AS E " +
+                    "JOIN VILLE AS V ON E.id_ville = V.id_ville " +
+                    "where V.id_ville = ? ";
+            try (PreparedStatement preparedStatement = connexion.prepareStatement(sqlRequest)) {
+                preparedStatement.setInt(1, ville.getId_ville());
+                try (ResultSet rs = preparedStatement.executeQuery()) {
+                    if (rs.next()) {
+                        counter = rs.getInt("nombreEtablissements");
+                        System.out.println(counter);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return counter;
+
     }
 
 }

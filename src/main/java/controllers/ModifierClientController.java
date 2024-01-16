@@ -1,5 +1,6 @@
 package controllers;
 
+import fr.rapplication.rapp.HelloApplication;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
@@ -25,59 +26,37 @@ public class ModifierClientController {
     @FXML
     private TextField numeroTelephone;
 
-    private Stage editStage;
-
     private Client client;
+    private HelloApplication helloApplication;
 
-    private boolean okClicked = false;
 
     @FXML
     private void initialize() {
-    }
-
-    public void setEditStage(Stage editStage) {
-        this.editStage = editStage;
     }
 
     public void setDenominationSociale(TextField denominationSociale) {
         this.denominationSociale = denominationSociale;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
 
-        denominationSociale.setText(client.getDenominationSociale());
-        mailClient.setText(client.getMailClient());
-        libelleRueClient.setText(client.getLibelleRueClient());
-        numeroRueClient.setText(client.getNumeroRueCLient());
-        complementAdresse.setText(client.getComplementAdresseClient());
-        //ville.setText(client.getVille().getId_ville());
-        codePostal.setText(client.getCodePostalClient());
-        numeroTelephone.setText(client.getNumTelClient());
-
-    }
 
     @FXML
     private void handleOk() {
-        if (isInputValid()) {
+        //if (isInputValid()) {
             client.setDenominationSociale(denominationSociale.getText());
             client.setMailClient(mailClient.getText());
             client.setLibelleRueClient(libelleRueClient.getText());
             client.setNumeroRueCLient(numeroRueClient.getText());
             client.setComplementAdresseClient(complementAdresse.getText());
-            //client.setVille(ville.getText());
+            client.getVille().setLibelleVille(ville.getText());
             client.setCodePostalClient(codePostal.getText());
             client.setNumTelClient(numeroTelephone.getText());
-
-            okClicked = true;
-            editStage.close();
-
-        }
+        //}
     }
 
     @FXML
     private void handleCancel() {
-        editStage.close();
+        helloApplication.getStage2().close();
     }
 
     private boolean isInputValid() {
@@ -136,7 +115,7 @@ public class ModifierClientController {
             return true;
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.initOwner(editStage);
+            //alert.initOwner(editStage);
             alert.setTitle("Invalid Fields");
             alert.setHeaderText("Please correct invalid fields");
             alert.setContentText(errorMessage);
@@ -145,5 +124,13 @@ public class ModifierClientController {
 
             return false;
         }
+    }
+
+    public HelloApplication getHelloApplication() {
+        return helloApplication;
+    }
+
+    public void setHelloApplication(HelloApplication helloApplication) {
+        this.helloApplication = helloApplication;
     }
 }
